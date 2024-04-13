@@ -10,6 +10,12 @@ class MaximoDivisorComun:
             a, b = b, a % b
         return a
 
+    def calcular_mcm(self):
+        mcd = self.calcular_mcd()
+        mcm = (self.num1 * self.num2) // mcd
+        return mcm
+
+
 def main():
     try:
         num1 = int(input("Ingrese el primer número: "))
@@ -21,10 +27,14 @@ def main():
 
         mdc_calculator = MaximoDivisorComun(num1, num2)
         mcd = mdc_calculator.calcular_mcd()
+        mcm = mdc_calculator.calcular_mcm()
+
         print(f"El máximo común divisor de {num1} y {num2} es: {mcd}")
+        print(f"El mínimo común múltiplo de {num1} y {num2} es: {mcm}")
 
     except ValueError:
         print("Por favor ingrese números enteros válidos.")
+
 
 if __name__ == "__main__":
     main()
